@@ -13,3 +13,10 @@ selected.
 If labels are not correctly associated with the radio buttons, then there
 could be one character's label assigned to all buttons rather than a unique
 description for each character.
+##### Q: Why do you think checkboxes were used instead of a dropdown menu for selecting supplies? What advantages or disadvantages does this approach offer?
+Checkboxes allow the user to see all possible options at once, and also indicate
+to the user that more than one option can be selected. While these are advantageous,
+there are also disadvantages to using checkboxes in that they take up more space on
+the screen that can create a feeling of bloat if the list is too long. Other
+interactable elements that the developer would like the user to interact with may
+be pushed away and out of sight.
