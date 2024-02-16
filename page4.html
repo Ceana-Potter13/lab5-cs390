@@ -15,9 +15,22 @@
             but I come alive with wind. What am I?”</quote>
         <p>Your Answer: <input type="text" id="riddleAnswer"> <input type="submit" 
             value="Submit Answer" id="submitButton" style="background-color: green"></p>
-    </section>
+        <p>Think carefully, for the correct answer will allow you passage.</p>
+        </section>
     <script>
+        let answer = "echo";
+        const userGuess = document.getElementById(riddleAnswer);
+        const submitBtn = document.getElementById(submitButton);
 
+        function checkGuess() {
+
+            if (riddleAnsw == "echo") {
+                submitBtn.style.backgroundColor = "red";
+            }
+            else {
+                submitBtn.style.backgroundColor = "green";
+            }
+        }
     </script>
 </body>
 </html>
