@@ -21,8 +21,10 @@
         <div onclick="selectAction('distract')" class="stealth-option" id="distract">Create a distraction</div>
         <div onclick="selectAction('wait')" class="stealth-option" id="wait">Wait for the right moment</div>
         <!-- Buttons -->
-        <button onclick="checkSequence()">Check Sequence</button>
-        <button onclick="reset()">Reset!</button>
+        <form id="sequenceForm">
+            <button onclick="checkSequence()">Check Sequence</button>
+            <button onclick="reset()">Reset!</button>
+        </form>
     </section>
     <script>
         const correctSequence = ['hide', 'wait', 'distract', 'run'];
@@ -40,6 +42,8 @@
         function checkSequence() {
             if (JSON.stringify(userSequence) === JSON.stringify(correctSequence)) {
                 alert('Congratulations brave adventurer!');
+                const myForm = document.getElementById('sequenceForm');
+                myForm.action = "page6.html";
             }
             else {
                 alert('In your folly you allowed yourself to be noticed. Perhaps in another timeline, you might have succeeded..' + '\n\n' + 'Press Reset to try again.')
@@ -48,8 +52,10 @@
 
         function reset() {
             userSequence = [];
-            const actions = document.querySelectorAll('stealth-option');
-            actions.classList.remove('selected');
+            const actions = document.querySelectorAll('.stealth-option');
+            actions.forEach(action => {
+                action.classList.remove('selected');
+            })
         }
     </script>
 </body>
